@@ -1,0 +1,13 @@
+# Lab 5, Task 5: equivalence by hand - the check EQY automates.
+#   yosys -m slang -s miter.ys
+read_slang bitops_gold.sv --top bitops
+rename bitops gold
+read_slang bitops_gate.sv --top bitops
+rename bitops gate
+# (not 'prep': without -top it keeps a single top module and deletes the other)
+proc
+opt_clean
+# TODO (Task 5): build a miter named "miter" from gold and gate
+#   (miter -equiv -flatten -make_assert ...), make it the top module, and prove
+#   its assertion with sat (-verify -prove-asserts -set-init-zero -tempinduct
+#   -show-inputs -show-outputs).

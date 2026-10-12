@@ -1,0 +1,16 @@
+# EQY configuration for Lab 6: RTL (gold) vs synthesized netlist (gate).
+#   eqy -f tl_ctrl.eqy
+
+[gold]
+plugin -i slang
+read_slang tl_ctrl.sv --top tl_ctrl
+prep -top tl_ctrl
+
+# TODO (Task 1): a [gate] section that reads tl_ctrl_netlist.v with read_verilog.
+
+# TODO (Task 2): a [collect *] section that groups the partitions synthesis tangled.
+
+[strategy sby]
+use sby
+depth 4
+engine smtbmc bitwuzla

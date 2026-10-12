@@ -1,0 +1,11 @@
+# Lab 6, Task 5: Yosys' built-in equivalence flow.
+#   yosys -m slang -s equiv.ys
+read_slang tl_ctrl.sv --top tl_ctrl
+rename tl_ctrl gold
+read_verilog tl_ctrl_netlist.v
+rename tl_ctrl gate
+proc
+opt_clean
+async2sync
+# TODO (Task 5): equiv_make gold gate equiv, make equiv the top module, then
+#   equiv_simple -seq 5, equiv_induct -seq 5 and equiv_status -assert.

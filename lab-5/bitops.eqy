@@ -1,0 +1,14 @@
+# EQY configuration for Lab 5: golden RTL vs refactored RTL.
+#   eqy -f bitops.eqy        (add -j 4 to run partitions in parallel)
+#
+# Each section is a Yosys script. [gold] and [gate] must each leave exactly one
+# elaborated top module with the same name and ports.
+
+[gold]
+plugin -i slang
+read_slang bitops_gold.sv --top bitops
+prep -top bitops
+
+# TODO (Task 1): a [gate] section that reads bitops_gate.sv the same way.
+
+# TODO (Task 1): a [strategy sby] section: use sby, depth 2, engine smtbmc bitwuzla.
