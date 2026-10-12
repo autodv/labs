@@ -35,3 +35,9 @@ by git.
 Reference solutions and a regression script are in
 [autodv/labs-solutions](https://github.com/autodv/labs-solutions). The
 untouched starter is tagged `starter-v1`.
+
+## License
+
+The files in this repository are released under the [MIT License](LICENSE),
+copyright (c) 2026 AutoDV. The lab handouts at <https://autodv.github.io/> are
+licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
